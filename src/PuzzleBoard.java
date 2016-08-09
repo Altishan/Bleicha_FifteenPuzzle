@@ -1,9 +1,7 @@
 //main file
 
 
-import sun.reflect.generics.tree.Tree;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -57,31 +55,30 @@ public class PuzzleBoard {
         //System.out.println("AYYYYYY");
 
         boolean validated = true;
-/*
+
         if (args.length > 3 || args.length < 2) {
             System.err.println("Invalid input. Number of args not correct.");
             validated = false;
         }
-/*
-        String initBoardState = args[1];
-        String searchType = args[2];
-        String SearchParam = args[3];
 
-        */
-        String initBoardState = "123456789AB DEFC";
+        String initBoardState = args[0];
+        String searchType = args[1];
+
+       // String initBoardState = "123456789AB DEFC";
 
         //String initBoardState = "234 16785ABC9DEF";
-        String searchType = "DLS";
-        int searchParam = 2;
+//        String searchType = "DLS";
+//        int searchParam = 2;
 
+        int searchParam = 0;
         if (args.length == 3) {
-            //int searchParam = Integer.parseInt(args[3]);
-            if (args[3].equals("h1")) {
+            searchParam = Integer.parseInt(args[2]);
+            if (args[2].equals("h1")) {
                 searchParam = 1;
-            } else if (args[3].equals("h2")) {
+            } else if (args[2].equals("h2")) {
                 searchParam = 2;
             } else if (searchType.equals("DLS")) {
-                searchParam = Integer.parseInt(args[3]);
+                searchParam = Integer.parseInt(args[2]);
             }
         }
 
@@ -485,9 +482,5 @@ public class PuzzleBoard {
         }
         return ret;
     }
-
-
-
-
 
 }
